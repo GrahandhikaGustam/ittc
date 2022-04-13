@@ -42,11 +42,11 @@ type koneksi : single,pool and request
 -------------------------------------------*/
 app.use(
     connection(mysql,{
-        host: 'remotemysql.com',
-        user: 'x4eqfax1Rg', // your mysql user
-        password : 'vVQlghhyVF', // your mysql password
+        host: 'biad7naotqx9quttdqx4-mysql.services.clever-cloud.com',
+        user: 'uymtxdr2yjgkzhjm', // your mysql user
+        password : 'ZAI9EU62rsTO3wOofNEB', // your mysql password
         port : 3306, //port mysql
-        database:'x4eqfax1Rg' // your database name
+        database:'biad7naotqx9quttdqx4' // your database name
     },'pool') //or single
 );
 app.use('/', index);
