@@ -6,10 +6,10 @@ const bodyparser = require('body-parser');
 var session_store;
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'toko_hp'
+    host: 'biad7naotqx9quttdqx4-mysql.services.clever-cloud.com',
+    user: 'uymtxdr2yjgkzhjm',
+    password: 'ZAI9EU62rsTO3wOofNEB',
+    database: 'biad7naotqx9quttdqx4'
 });
 
 router.get("/", authentication_mdl.is_login, function (req, res, next) {
