@@ -1,0 +1,20 @@
+doctype html 
+html 
+  head
+    include head.jade 
+      
+  body 
+    div.preloader
+      .lds-ripple 
+        .lds-pos 
+        .lds-pos 
+    div(data-layout="vertical", data-navbarbg="skin5", data-sidebartype="full", data-sidebar-position="absolute", data-header-position="absolute", data-boxed-layout="full")#main-wrapper
+      include sidebar.jade 
+      div.page-wrapper
+        include header.jade 
+        .container-fluid 
+          block content 
+        include footer.jade 
+    include js.jade 
+
+        

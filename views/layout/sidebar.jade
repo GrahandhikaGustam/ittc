@@ -1,0 +1,20 @@
+aside.left-sidebar(data-sidebarbg='skin6')
+      // Sidebar scroll
+      .scroll-sidebar
+        // Sidebar navigation
+        nav.sidebar-nav
+          ul#sidebarnav
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/', aria-expanded='false')
+                i.mdi.mdi-view-dashboard
+                span.hide-menu Dashboard
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/profile', aria-expanded='false')
+                i.mdi.mdi-account-network
+                span.hide-menu Profile
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/daftarbarang', aria-expanded='false')
+                i.mdi.mdi-border-all
+                span.hide-menu Barang
+            li.text-center.p-40.upgrade-btn
+              a.btn.d-block.w-100.btn-danger.text-white(href='/logout') LOG OUT

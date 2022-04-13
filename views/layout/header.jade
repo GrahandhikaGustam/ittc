@@ -1,0 +1,10 @@
+.page-breadcrumb
+      .row.align-items-center
+        .col-6
+          nav(aria-label='breadcrumb')
+            ol.breadcrumb.mb-0.d-flex.align-items-center
+              li.breadcrumb-item
+                a.link(href='/')
+                  i.mdi.mdi-home-outline.fs-4
+              li.breadcrumb-item.active(aria-current='page') #{title}
+          h1.mb-0.fw-bold #{title}

@@ -1,0 +1,74 @@
+extends layout/base
+
+block content
+ .col-12
+    .card
+      .card-body
+        - if(messages.msg_info)
+            .alert.alert-success.alert-dismissible.show.fade(role='alert')
+              | !{messages.msg_info}
+              button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close')
+        - if(messages.msg_error)
+            .alert.alert-danger.alert-dismissible.show.fade(role='alert')
+              | !{messages.msg_error}
+              button.btn-close(type='button', data-bs-dismiss='alert', aria-label='Close')
+        .table-responsive
+          table.table.table-bordered
+            thead
+              tr
+                th(scope='col') Kode Handphone
+                th(scope='col') Foto Handphone
+                th(scope='col') Nama Handphone
+                th(scope='col') Merk Handphone 
+                th(scope='col') Harga Handphone 
+                th(scope='col') Deskripsi Handphone
+                th(scope='col') Stok Handphone
+                th(scope='col')
+            tbody
+              if messages.msg_error
+                | !{messages.msg_error}
+              else
+                for row, index in data
+                  tr
+                    td(scope='row') #{row.kode}
+                    td 
+                      img(src='#{row.foto}', alt='#{row.nama}', width="100")
+                    td #{row.nama}
+                    td #{row.merk}
+                    td #{row.harga}
+                    td #{row.deskripsi}
+                    td #{row.stok}
+                    td 
+                      a(href="/daftarbarang/edit/#{row.id}" type="button").btn.btn-warning.mb-2
+                        i.fas.fa-edit
+                      br
+                      a(href="/daftarbarang/delete/#{row.id}" type="button").btn.btn-danger.text-white
+                        i.fas.fa-trash-alt
+        .text-end.upgrade-btn 
+          button.btn.btn-primary(type='button' data-bs-toggle="modal" data-bs-target="#exampleModal")
+            | Tambah Stok
+          #exampleModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+            .modal-dialog
+              .modal-content
+                form(action="/daftarbarang/add", method="post")
+                  .modal-header
+                    h5#exampleModalLabel.modal-title Tambah Stok
+                    button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                  .modal-body
+                    .form-group 
+                      input(type="text", placeholder="Kode Handphone", name="kode").form-control
+                    .form-group 
+                      textarea(name="foto", rows="5", placeholder="Link Image").form-control
+                    .form-group 
+                      input(type="text", placeholder="Nama Handphone", name="nama").form-control
+                    .form-group 
+                      input(type="text", placeholder="Merk Handphone", name="merk").form-control
+                    .form-group 
+                      input(type="text", placeholder="Harga Handphone", name="harga").form-control
+                    .form-group 
+                      textarea(rows="5", placeholder="Deskripsi Handphone", name="deskripsi").form-control
+                    .form-group 
+                      input(type="text", placeholder="Stok Handphone", name="stok").form-control
+                  .modal-footer
+                    button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Tutup
+                    button.btn.btn-primary(type='submit') Simpan

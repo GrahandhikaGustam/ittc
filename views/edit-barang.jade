@@ -1,0 +1,39 @@
+extends layout/base
+
+block content
+    .col-12
+        .card
+            .card-body
+                form(role='form', method='post', action='/daftarbarang/update/#{(id==undefined) ? data.id : id}').form.form-horizontal
+                  .form-body
+                    .row
+                      .col-md-2
+                        label Kode Barang
+                      .col-md-10.form-group
+                        input#first-name.form-control(type='text', name='kode', placeholder='Kode Barang', value="#{ (kode == undefined) ? data.kode : kode }")
+                      .col-md-2
+                        label Link Image
+                      .col-md-10.form-group
+                        textarea(name='foto', placeholder='Link Image', rows='5').form-control #{ (foto == undefined) ? data.foto : foto }
+                      .col-md-2
+                        label Nama Barang
+                      .col-md-10.form-group
+                        input#first-name.form-control(type='text', name='nama', placeholder='Nama Barang', value="#{ (nama == undefined) ? data.nama : nama }")
+                      .col-md-2
+                        label Merk Barang
+                      .col-md-10.form-group
+                        input#first-name.form-control(type='text', name='merk', placeholder='Merk Barang', value="#{ (merk == undefined) ? data.merk : merk }")
+                      .col-md-2
+                        label Harga Barang
+                      .col-md-10.form-group
+                        input#first-name.form-control(type='text', name='harga', placeholder='Harga Barang', value="#{ (harga == undefined) ? data.harga : harga }")
+                      .col-md-2
+                        label Deskripsi Barang
+                      .col-md-10.form-group
+                        textarea(type='text', name='deskripsi', placeholder='Deskripsi Barang', rows="5").form-control #{ (deskripsi == undefined) ? data.deskripsi : deskripsi }
+                      .col-md-2
+                        label Stok Barang
+                      .col-md-10.form-group
+                        input#first-name.form-control(type='text', name='stok', placeholder='Stok Barang', value="#{ (stok == undefined) ? data.stok : stok }")
+                      .col-md-12.form-group.text-end
+                        button(type='submit').btn.btn-primary Simpan
